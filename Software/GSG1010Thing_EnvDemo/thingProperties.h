@@ -1,5 +1,6 @@
 #include <ArduinoIoTCloud.h>
 #include <Arduino_ConnectionHandler.h>
+#include "arduino_secrets.h"
 
 
 const char THING_ID[] = MY_THING_ID;
@@ -16,10 +17,10 @@ float temperature;
 void initProperties(){
 
   ArduinoCloud.setThingId(THING_ID);
-  ArduinoCloud.addProperty(illuminance, READ, 5 * SECONDS, NULL);
-  ArduinoCloud.addProperty(humidity, READ, 5 * SECONDS, NULL);
+  ArduinoCloud.addProperty(illuminance, READ, ON_CHANGE, NULL);
+  ArduinoCloud.addProperty(humidity, READ, ON_CHANGE, NULL);
   ArduinoCloud.addProperty(ledOn, READWRITE, ON_CHANGE, onLedOnChange);
-  ArduinoCloud.addProperty(temperature, READ, 5 * SECONDS, NULL);
+  ArduinoCloud.addProperty(temperature, READ, ON_CHANGE, NULL);
 
 }
 
