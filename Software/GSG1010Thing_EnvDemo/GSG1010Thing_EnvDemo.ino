@@ -27,7 +27,7 @@
 #define CSPIN 4
 
 
-const char* FILENAME = "test.txt";
+const char* FILENAME = "telemetr.csv";  // filename has MAXIMUM length of 8 characters, file extension has MAXIMUM length of three characters!
 
 unsigned long lastWriteTime = 0;
 unsigned long writeDelay = 5000;
