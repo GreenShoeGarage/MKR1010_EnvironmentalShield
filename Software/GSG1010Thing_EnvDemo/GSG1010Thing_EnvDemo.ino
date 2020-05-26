@@ -30,7 +30,7 @@
 const char* FILENAME = "telemetr.csv";  // filename has MAXIMUM length of 8 characters, file extension has MAXIMUM length of three characters!
 
 unsigned long lastWriteTime = 0;
-unsigned long writeDelay = 5000;
+unsigned long writeDelay = 60000;
 
 File myFile;
 
@@ -42,6 +42,7 @@ void setup()
   }
 
   WiFiDrv::pinMode(LEDPIN, OUTPUT);
+  WiFiDrv::digitalWrite(LEDPIN, LOW);
 
 
   Serial.print("Initializing SD card...");
